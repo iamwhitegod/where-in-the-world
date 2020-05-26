@@ -1,0 +1,424 @@
+$color-mode-light: hsl(0, 0%, 100%);
+$color-mode-light-bg: hsl(0, 0%, 98%);
+
+$box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.07);
+$box-shadow-dp: 0 0.6rem 2.5rem rgba(0, 0, 0, 0.07);
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==sm-phone {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==phone {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media (max-width: 960px) {
+      @content;
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  background-color: $color-mode-light-bg;
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: $color-mode-light;
+  box-shadow: $box-shadow;
+  margin-bottom: 5rem;
+
+  &.fixed-top {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+
+    @include respond(tablet) {
+      padding: 2rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 800;
+
+      @include respond(sm-phone) {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__mode {
+      font-size: 1.4rem;
+      font-weight: 600;
+      cursor: pointer;
+
+      span {
+        display: inline-block;
+        margin-left: 0.5rem;
+        position: relative;
+        top: -0.2rem;
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+
+  @include respond(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
+  &__dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__dropdown-btn {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: $color-mode-light;
+    box-shadow: $box-shadow-dp;
+    padding: 1.5rem;
+    margin-bottom: 0.5rem;
+    width: 18rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    .down-arrow-icon {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.8rem;
+      position: relative;
+      top: 0.4rem;
+      right: -2rem;
+    }
+  }
+
+  &__dropdown-content {
+    display: none;
+    padding: 1.5rem;
+    background-color: $color-mode-light;
+    box-shadow: $box-shadow-dp;
+    border-radius: 0.4rem;
+    position: absolute;
+    top: 5.8rem;
+    width: 18rem;
+
+    a:first-child {
+      margin-top: 1rem;
+    }
+  }
+
+  &__dropdown-content > a {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 1rem;
+  }
+
+  &__search {
+    align-self: flex-start;
+    display: block;
+    width: 45rem;
+
+    position: relative;
+
+    @include respond(phone) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    input {
+      font-size: 1.6rem;
+      width: 100%;
+      background-color: $color-mode-light;
+      box-shadow: $box-shadow-dp;
+      padding: 1.5rem 6rem;
+      outline: none;
+      border: none;
+      border-radius: 0.4rem;
+
+      @include respond(sm-phone) {
+        font-size: 1.4rem;
+      }
+
+      &::placeholder {
+        color: #c0c0c0;
+      }
+    }
+  }
+
+  &__search-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 1.4rem;
+    left: 1.5rem;
+
+    ion-icon {
+      font-size: 1.9rem;
+      color: #c0c0c0;
+    }
+  }
+}
+
+.content__cards {
+  display: flex;
+  //justify-content: flex-start;
+  flex-wrap: wrap;
+  width: fit-content;
+  // margin: 0 auto;
+
+  .card {
+    flex-basis: 21%;
+    min-width: 23rem;
+    max-width: 23.9rem;
+    max-height: 30.1rem;
+    background-color: $color-mode-light;
+    box-shadow: $box-shadow;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    margin: 0 auto 8rem;
+
+    &__img {
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        //height: 100%;
+      }
+    }
+
+    &__details {
+      padding: 2rem 2rem 3rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__info {
+      display: block;
+      font-size: 1.4rem;
+      font-size: 800;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// details.html Styles
+.container {
+  padding: 2rem;
+
+  @include respond(phone) {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.btp-btn {
+  display: inline-block;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: $color-mode-light;
+  box-shadow: $box-shadow-dp;
+  margin-bottom: 5rem;
+}
+
+.country-card {
+  display: flex;
+
+  @include respond(tablet) {
+    flex-direction: column;
+  }
+
+  &__img {
+    flex-basis: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 38rem;
+
+      @include respond(tablet) {
+        height: auto;
+      }
+    }
+
+    @include respond(phone) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__desc {
+    flex-basis: 50%;
+    padding: 8rem;
+
+    @include respond(phone) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+
+    @include respond(tablet) {
+      font-size: 3.6rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    @include respond(phone) {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__item {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      font-weight: 300;
+    }
+
+    @include respond(tablet) {
+      font-size: 1.6rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.4rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__boundries {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    @include respond(tablet) {
+      font-size: 1.6rem;
+    }
+
+    @include respond(phone) {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: $color-mode-light;
+    box-shadow: $box-shadow-dp;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include respond(phone) {
+      margin-left: 0;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    @include respond(sm-phone) {
+      padding: 0.8rem 1.5rem;
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.active {
+  display: block;
+}

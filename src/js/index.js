@@ -1,6 +1,6 @@
 import "../sass/main.scss";
 import Search from "./models/Search";
-import Country from "./models/Country";
+import Countries from "./models/Country";
 import * as searchViews from "./views/searchviews";
 import { domElements } from "./views/base";
 
@@ -13,13 +13,18 @@ import { domElements } from "./views/base";
 const state = {};
 
 const crltDataOnLoad = async () => {
-  // 1) Get fetched Data from model
+  // 1) Prepare UI for Results
+  domElements.cardContainer.innerHTML = '';
 
   // 2) New Country Object and add to state
+  state.countries = new Countries();
 
-  // 3) Prepare UI for Results
+  // 3) fetch Data from model
+  await state.countries.getCountries();
+  console.log(state.countries.result)
 
-  // 
+  // 4) Render UI
+  searchViews.renderResults(state.countries.result);
 }
 
 const crltSearch = async () => {
@@ -40,9 +45,9 @@ const crltSearch = async () => {
   }
 };
 
-document.addEventListener('onload', () => {
+window.onload = () => {
   crltDataOnLoad();
-})
+}
 
 domElements.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();

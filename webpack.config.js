@@ -62,9 +62,11 @@ module.exports = {
       //     }
       //   ]
       // },
-      // resolve: {
-      //   //extensions: ['.js', '.jsx'],
-      //   extensions: ['.js', '.jsx', '.scss']
+      // {
+      //   resolve: {
+      //     //extensions: ['.js', '.jsx'],
+      //     extensions: ['.js', '.jsx', '.scss']
+      //   },
       // },
       {
         test: /\.js$/,
@@ -86,6 +88,7 @@ module.exports = {
     new htmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
+      template: "./src/pages/details.html",
     }),
 
     new browserSyncPlugin({

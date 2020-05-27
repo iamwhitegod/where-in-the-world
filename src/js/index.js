@@ -12,6 +12,16 @@ import { domElements } from "./views/base";
 
 const state = {};
 
+const crltDataOnLoad = async () => {
+  // 1) Get fetched Data from model
+
+  // 2) New Country Object and add to state
+
+  // 3) Prepare UI for Results
+
+  // 
+}
+
 const crltSearch = async () => {
   // 1) Get query from view
   const query = searchViews.getInput();
@@ -29,6 +39,10 @@ const crltSearch = async () => {
     searchViews.renderResults(state.search.result);
   }
 };
+
+document.addEventListener('onload', () => {
+  crltDataOnLoad();
+})
 
 domElements.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();

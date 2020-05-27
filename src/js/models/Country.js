@@ -43,4 +43,19 @@ export default class Country {
       console.log(err);
     }
   }
+
+  async getByRegion(region) {
+    try {
+      const res = await axios(`https://restcountries-v1.p.rapidapi.com/region/${region}`, {
+        headers: {
+          "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+          "x-rapidapi-key": "ce361666fdmsh7d2a740965f889ep1edfc7jsn8a2d7fa08cda",
+          useQueryString: true,
+        },
+      });
+      this.result = res.data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }

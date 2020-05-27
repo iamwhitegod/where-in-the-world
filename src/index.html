@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
   <title>Rest Countries API</title>
 
-  <script type=" module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js">
-  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
@@ -27,15 +26,17 @@
   </header>
   <div class="content">
     <div class="row">
-      <form action="#" method="GET" class="form">
-        <div class="form__search">
-          <label for="search"></label>
-          <input type="search" name="search" id="input-search" placeholder="Search over 500 Countries"
-            autocomplete="off" class="form__search-input">
-          <span class="form__search-icon">
-            <ion-icon name="search-outline"></ion-icon>
-          </span>
-        </div>
+      <div class="content__search-bar">
+        <form action="#" method="GET" class="form">
+          <div class="form__search">
+            <label for="search"></label>
+            <input type="search" name="search" id="input-search" placeholder="Search over 500 Countries"
+              autocomplete="off" class="form__search-input">
+            <span class="form__search-icon">
+              <ion-icon name="search-outline"></ion-icon>
+            </span>
+          </div>
+        </form>
         <div class="form__dropdown">
           <button class="form__dropdown-btn">Filter by Region
             <span class="down-arrow-icon">
@@ -43,14 +44,14 @@
             </span>
           </button>
           <div class="form__dropdown-content">
-            <a href="#">Africa</a>
-            <a href="#">America</a>
-            <a href="#">Asia</a>
-            <a href="#">Europe</a>
-            <a href="#">Oceania</a>
+            <a href="#africa">Africa</a>
+            <a href="#americas">America</a>
+            <a href="#asia">Asia</a>
+            <a href="#europe">Europe</a>
+            <a href="#oceania">Oceania</a>
           </div>
         </div>
-      </form>
+      </div>
 
       <div class="content__cards">
         <!-- <div class="card">

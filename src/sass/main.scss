@@ -1,5 +1,10 @@
 $color-mode-light: hsl(0, 0%, 100%);
 $color-mode-light-bg: hsl(0, 0%, 98%);
+$color-mode-darkgray-lgin: hsl(0, 0%, 52%);
+
+$color-mode-darkblue: hsl(209, 23%, 22%);
+$color-mode-verydarkblue-bg: hsl(207, 26%, 17%);
+$color-mode-verydarkblue-txt: hsl(200, 15%, 8%);
 
 $box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.07);
 $box-shadow-dp: 0 0.6rem 2.5rem rgba(0, 0, 0, 0.07);
@@ -92,7 +97,7 @@ body {
   }
 }
 
-.form {
+.content__search-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,6 +108,13 @@ body {
     align-items: flex-start;
     padding: 2rem;
   }
+}
+
+.form {
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // margin-bottom: 5rem;
 
   &__dropdown {
     position: relative;
@@ -425,4 +437,23 @@ body {
 
 .active {
   display: block;
+}
+
+.loader {
+  margin: 5rem auto;
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+  padding: 1em;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  svg path,
+  svg rect {
+    fill: $color-mode-verydarkblue-txt;
+  }
 }

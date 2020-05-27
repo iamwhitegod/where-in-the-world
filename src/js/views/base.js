@@ -3,4 +3,5 @@ export const domElements = {
   searchInput: document.querySelector(".form__search-input"),
   searchIcon: document.querySelector(".form__search-icon"),
   cardContainer: document.querySelector(".content__cards"),
+  countryCard: document.querySelector(".country-card"),
 };

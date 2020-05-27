@@ -72,23 +72,33 @@ const crltCountry = async () => {
       await state.country.getCountry();
       // 5) Render UI
       console.log(state.country);
+      countryViews.renderCountryDetails(state.country);
     } catch (err) {
       console.log(err);
     }
   }
 };
 
-window.addEventListener("load", crltAllCountries);
-window.addEventListener("hashchange", crltCountry);
+if (window.location.pathname === "/") {
+  window.addEventListener("load", crltAllCountries);
 
-domElements.searchForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  crltSearch();
-});
+  if (domElements.searchForm) {
+    domElements.searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      crltSearch();
+    });
+  }
 
-domElements.searchIcon.addEventListener("click", (e) => {
-  crltSearch();
-});
+  if (domElements.searchIcon) {
+    domElements.searchIcon.addEventListener("click", (e) => {
+      crltSearch();
+    });
+  }
+}
+
+if (window.location.pathname === "/pages/details.html") {
+  window.addEventListener("load", crltCountry);
+}
 
 // const dropdownfilterBtn = document.querySelector(".form__dropdown-btn");
 // const dropdownContent = document.querySelector(".form__dropdown-content");

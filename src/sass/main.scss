@@ -276,7 +276,11 @@ body {
   border-radius: 0.4rem;
   background-color: $color-mode-light;
   box-shadow: $box-shadow-dp;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .country-card {

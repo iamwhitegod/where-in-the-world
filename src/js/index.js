@@ -12,21 +12,28 @@ import { domElements } from "./views/base";
 
 const state = {};
 
-const crltDataOnLoad = async () => {
+/**
+ * All COUNTRIES CONTROLLER
+ */
+const crltAllCountries = async () => {
   // 1) Prepare UI for Results
-  domElements.cardContainer.innerHTML = '';
+  domElements.cardContainer.innerHTML = "";
 
   // 2) New Country Object and add to state
   state.countries = new Countries();
+  try {
+    // 3) fetch Data from model
+    await state.countries.getAllCountries();
+    // 4) Render UI
+    searchViews.renderResults(state.countries.result);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-  // 3) fetch Data from model
-  await state.countries.getCountries();
-  console.log(state.countries.result)
-
-  // 4) Render UI
-  searchViews.renderResults(state.countries.result);
-}
-
+/**
+ * SEARCH CONTROLLER
+ */
 const crltSearch = async () => {
   // 1) Get query from view
   const query = searchViews.getInput();
@@ -37,17 +44,35 @@ const crltSearch = async () => {
     // 3) Prepare UI for Results
     searchViews.clearInputs();
     searchViews.clearUI();
-
-    // 4) Search for Country
-    await state.search.searchByName();
-    // 5) Render UI
-    searchViews.renderResults(state.search.result);
+    try {
+      // 4) Search for Country
+      await state.search.searchByName();
+      // 5) Render UI
+      searchViews.renderResults(state.search.result);
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 
-window.onload = () => {
-  crltDataOnLoad();
-}
+/**
+ * COUNTRY DETAILS CONTROLLER
+ */
+const crltCountry = async () => {
+  // 1) Get alphaCode(hash) from URL
+  const alphaCode = window.location.hash.replace("#", "");
+  console.log(alphaCode);
+
+  if (alphaCode) {
+    // 2) Prepare UI for Changes
+    // 3) New Country Object and add to state
+    // 4) Get Country Data
+    // 5) Render UI
+  }
+};
+
+window.addEventListener("load", crltAllCountries);
+window.addEventListener("hashchange", crltCountry);
 
 domElements.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();

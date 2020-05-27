@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="../js/bundle.js"></script>
+  <!-- <script src="../js/bundle.js"></script> -->
 
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
   <title>Rest Countries API</title>
 
-
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script type=" module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js">
+  </script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
@@ -25,44 +25,308 @@
       </span>
     </nav>
   </header>
-
-  <div class="container">
+  <div class="content">
     <div class="row">
-      <a href="/"><button class="btp-btn">Back</button></a>
+      <form action="#" method="GET" class="form">
+        <div class="form__search">
+          <label for="search"></label>
+          <input type="search" name="search" id="input-search" placeholder="Search over 500 Countries"
+            autocomplete="off" class="form__search-input">
+          <span class="form__search-icon">
+            <ion-icon name="search-outline"></ion-icon>
+          </span>
+        </div>
+        <div class="form__dropdown">
+          <button class="form__dropdown-btn">Filter by Region
+            <span class="down-arrow-icon">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="form__dropdown-content">
+            <a href="#">Africa</a>
+            <a href="#">America</a>
+            <a href="#">Asia</a>
+            <a href="#">Europe</a>
+            <a href="#">Oceania</a>
+          </div>
+        </div>
+      </form>
 
-      <div class="country-card">
-        <div class="country-card__img">
-          <img src="https://restcountries.eu/data/bel.svg" alt="Belgium">
-        </div>
-        <div class="country-card__desc">
-          <h1 class="country-card__title">Belgium</h1>
-          <div class="country-card__info">
-            <ul class="country-card__list">
-              <li class="country-card__item">Native name: <span>België</span></li>
-              <li class="country-card__item">Population: <span>11319511</span></li>
-              <li class="country-card__item">Region: <span>Europe</span></li>
-              <li class="country-card__item">Sub Region: <span>Western Europe</span></li>
-              <li class="country-card__item">Capital: <span>Brussels</span></li>
-            </ul>
-            <ul class="country-card__list">
-              <li class="country-card__item">Top Level Domain: <span>be</span></li>
-              <li class="country-card__item">Currencies: <span>Euro</span></li>
-              <li class="country-card__item">Languages: <span>French</span></li>
-            </ul>
+      <div class="content__cards">
+        <!-- <div class="card">
+          <div class="card__img">
+            <a href="pages/details.html">
+              <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/an.svg" alt="country flags">
+            </a>
           </div>
-          <div class="country-card__btns">
-            <span class="country-card__boundries">Border Countries</span>
-            <button class="country-card__btn">France</button>
-            <button class="country-card__btn">Germany</button>
-            <button class="country-card__btn">Neitherlands</button>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
           </div>
         </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ng.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/us.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/af.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/an.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ng.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/us.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/af.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/an.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ng.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/us.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/af.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/an.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ng.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/us.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/af.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/an.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ng.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/us.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/af.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/an.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ng.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/us.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img">
+            <img src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/af.svg" alt="country flags">
+          </div>
+          <div class="card__details">
+            <h2 class="card__title">Country Name</h2>
+            <span class="card__info">Population</span>
+            <span class="card__info">Region</span>
+            <span class="card__info">Capital</span>
+          </div>
+        </div> -->
       </div>
     </div>
-  </div>
-
-  <!-- <script src="../js/bundle.js"></script> -->
-
+    <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
+    <script src="js/bundle.js"></script>
 <script src="js/bundle.js"></script></body>
 
 </html>

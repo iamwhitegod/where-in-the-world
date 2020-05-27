@@ -1,12 +1,9 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const browserSyncPlugin = require("browser-sync-webpack-plugin");
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
-
-const isDevelopment = process.env.NODE_ENV === 'development'
-
-
+const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
   // Four core concepts in webpack
@@ -78,7 +75,6 @@ module.exports = {
     ],
   },
 
-
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
@@ -88,21 +84,23 @@ module.exports = {
     new htmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
-      template: "./src/pages/details.html",
     }),
 
-    new browserSyncPlugin({
-      host: "localhost",
-      port: 3000,
-      proxy: 'http://localhost:5000/'
-      // server: {
-      //   baseDir: ['dist']
-      // }
-    }, { reload: false }),
+    new browserSyncPlugin(
+      {
+        host: "localhost",
+        port: 3000,
+        proxy: "http://localhost:5000/",
+        // server: {
+        //   baseDir: ['dist']
+        // }
+      },
+      { reload: false }
+    ),
 
     new miniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
-    })
+      filename: isDevelopment ? "[name].css" : "[name].[hash].css",
+      chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css",
+    }),
   ],
 };

@@ -14,8 +14,10 @@ const renderCountry = (country) => {
   const markup = `
   <div class="card">
     <div class="card__img">
-      <a href="pages/details.html">
-        <img src="https://assets.thebasetrip.com/api/v2/countries/flags/${country.name.replace(/\s/g, '-').toLowerCase()}.svg" alt="${country.name}">
+      <a href="#${country.alpha2Code.toLowerCase()}">
+        <img src="https://assets.thebasetrip.com/api/v2/countries/flags/${country.name
+          .replace(/\s/g, "-")
+          .toLowerCase()}.svg" alt="${country.name}">
       </a >
     </div >
   <div class="card__details">

@@ -1,7 +1,8 @@
 import "../sass/main.scss";
 import Search from "./models/Search";
-import Countries from "./models/Country";
+import Country from "./models/Country";
 import * as searchViews from "./views/searchviews";
+import * as countryViews from "./views/countryviews";
 import { domElements } from "./views/base";
 
 /**
@@ -20,7 +21,7 @@ const crltAllCountries = async () => {
   domElements.cardContainer.innerHTML = "";
 
   // 2) New Country Object and add to state
-  state.countries = new Countries();
+  state.countries = new Country();
   try {
     // 3) fetch Data from model
     await state.countries.getAllCountries();
@@ -61,13 +62,19 @@ const crltSearch = async () => {
 const crltCountry = async () => {
   // 1) Get alphaCode(hash) from URL
   const alphaCode = window.location.hash.replace("#", "");
-  console.log(alphaCode);
 
   if (alphaCode) {
     // 2) Prepare UI for Changes
     // 3) New Country Object and add to state
-    // 4) Get Country Data
-    // 5) Render UI
+    state.country = new Country(alphaCode);
+    try {
+      // 4) Get Country Data
+      await state.country.getCountry();
+      // 5) Render UI
+      console.log(state.country);
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 

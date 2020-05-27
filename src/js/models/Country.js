@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default class Countries {
+export default class Country {
   constructor(alphaCode) {
     this.alphaCode = alphaCode;
   }

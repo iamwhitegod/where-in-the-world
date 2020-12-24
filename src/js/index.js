@@ -3,7 +3,7 @@ import Search from "./models/Search";
 import Country from "./models/Country";
 import * as searchViews from "./views/searchviews";
 import * as countryViews from "./views/countryviews";
-import { domElements, renderLoader, clearLoader } from "./views/base";
+import { domElements, renderLoader, clearLoader, theme } from "./views/base";
 
 /**
  * Search Object
@@ -143,3 +143,7 @@ if (window.location.pathname === "/") {
 if (window.location.pathname === "/pages/details.html") {
   window.addEventListener("load", crltCountry);
 }
+
+// domElements.navMode.addEventListener("click", (e) => {
+//   theme();
+// });

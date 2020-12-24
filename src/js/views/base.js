@@ -7,6 +7,8 @@ export const domElements = {
   dropdown: document.querySelector(".form__dropdown"),
   dropdownBtn: document.querySelector(".form__dropdown-btn"),
   dropdownContent: document.querySelector(".form__dropdown-content"),
+  body: document.querySelector("body"),
+  navMode: document.querySelector(".nav__mode"),
 };
 
 export const elementStrings = {
@@ -37,4 +39,10 @@ export const renderLoader = (parent) => {
 export const clearLoader = () => {
   const loader = document.querySelector(`.${elementStrings.loader}`);
   if (loader) loader.parentElement.removeChild(loader);
+};
+
+//Theme Switcher
+
+export const theme = () => {
+  domElements.body.classList.toggle("dark-mode");
 };

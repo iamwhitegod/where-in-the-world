@@ -20,7 +20,7 @@ export default class Search {
         `https://restcountries.eu/rest/v2/name/${this.query}`
       );
       this.result = res.data;
-      //console.log(this.result);
+      console.log(this.result);
     } catch (err) {
       console.log(err.response);
     }

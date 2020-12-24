@@ -7,6 +7,7 @@ export default class Country {
 
   async getAllCountries() {
     try {
+<<<<<<< HEAD
       // const res = await axios("https://restcountries-v1.p.rapidapi.com/all", {
       //   headers: {
       //     "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
@@ -15,6 +16,19 @@ export default class Country {
       //   },
       // });
       const res = await axios("https://restcountries.eu/rest/v2/all");
+=======
+      //   const res = await axios("https://restcountries-v1.p.rapidapi.com/all", {
+      //     headers: {
+      //       "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+      //       "x-rapidapi-key":
+      //         "8b2040f64bmsh170259eb8d262f2p174604jsne4daa4f73d42",
+      //       useQueryString: true,
+      //     },
+      //   });
+
+      const res = await axios("https://restcountries.eu/rest/v2/all");
+      console.log(res.data);
+>>>>>>> db85df09f083cdeffe8fdcd3335c3b83c66c6428
       this.result = res.data;
     } catch (err) {
       console.log(err);
@@ -23,6 +37,7 @@ export default class Country {
 
   async getCountry() {
     try {
+<<<<<<< HEAD
       const res = await axios(
         // `https://restcountries-v1.p.rapidapi.com/alpha/${this.alphaCode}`,
         // {
@@ -35,6 +50,25 @@ export default class Country {
         // }
         `https://restcountries.eu/rest/v2/alpha/${this.alphaCode}`
       );
+=======
+      // const res = await axios(
+      //   `https://restcountries-v1.p.rapidapi.com/alpha/${this.alphaCode}`,
+      //   {
+      //     headers: {
+      //       "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+      //       "x-rapidapi-key":
+      //         "ce361666fdmsh7d2a740965f889ep1edfc7jsn8a2d7fa08cda",
+      //       useQueryString: true,
+      //     },
+      //   }
+      // );
+
+      const res = await axios(`
+      https://restcountries.eu/rest/v2/alpha/${this.alphaCode}`);
+
+      console.log(res.data);
+
+>>>>>>> db85df09f083cdeffe8fdcd3335c3b83c66c6428
       this.name = res.data.name;
       this.population = res.data.population;
       this.region = res.data.region;
@@ -64,10 +98,16 @@ export default class Country {
       //     },
       //   }
       // );
+<<<<<<< HEAD
 
       const res = await axios(
         `https://restcountries.eu/rest/v2/region/${region}`
       );
+=======
+      const res = await axios(`
+      https://restcountries.eu/rest/v2/region/${region}`);
+      console.log(res.data);
+>>>>>>> db85df09f083cdeffe8fdcd3335c3b83c66c6428
       this.result = res.data;
     } catch (err) {
       console.log(err);

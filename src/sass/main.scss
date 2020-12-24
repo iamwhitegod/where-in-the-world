@@ -45,6 +45,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 300;
   background-color: $color-mode-light-bg;
+  color: $color-mode-verydarkblue-txt;
 }
 
 .row {
@@ -168,7 +169,7 @@ body {
     display: block;
     font-size: 1.4rem;
     font-weight: 600;
-    color: #000;
+    color: $color-mode-verydarkblue-txt;
     text-decoration: none;
     padding-bottom: 1rem;
   }
@@ -437,6 +438,11 @@ body {
 
 .active {
   display: block;
+}
+
+.dark-mode {
+  background-color: $color-mode-verydarkblue-bg;
+  color: $color-mode-light;
 }
 
 .loader {

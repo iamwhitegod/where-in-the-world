@@ -34,11 +34,7 @@ const renderDetails = (countryInfo) => {
 
   const markup = `
   <div class="country-card__img">
-<<<<<<< HEAD
   <img src="${countryInfo.flag}">
-=======
-  <img src="${countryInfo.flag}" alt="${countryInfo.name}">
->>>>>>> db85df09f083cdeffe8fdcd3335c3b83c66c6428
 </div>
 <div class="country-card__desc">
   <h1 class="country-card__title">${countryInfo.name}</h1>
@@ -65,21 +61,11 @@ const renderDetails = (countryInfo) => {
         countryInfo.topLevelDomain
       }</span></li>
       <li class="country-card__item">Currencies: <span>${
-<<<<<<< HEAD
         countryInfo.currencies
       }</span></li>
       <li class="country-card__item">Languages: <span>${countryInfo.languages.join(
         ", "
       )}</span></li>
-=======
-        countryInfo.currencies[0].name
-      }</span></li>
-      <li class="country-card__item">Languages: <span>${countryInfo.languages
-        .map((language) => {
-          return language.name;
-        })
-        .join(", ")}</span></li>
->>>>>>> db85df09f083cdeffe8fdcd3335c3b83c66c6428
     </ul>
   </div>
   <div class="country-card__btns">

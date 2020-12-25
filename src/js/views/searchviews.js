@@ -33,11 +33,7 @@ const renderCountry = (country) => {
   <div class="card">
     <div class="card__img">
       <a href="/pages/details.html?#${country.alpha2Code.toLowerCase()}">
-<<<<<<< HEAD
-        <img src="${country.flag}">
-=======
         <img src="${country.flag}" alt="${country.name}">
->>>>>>> db85df09f083cdeffe8fdcd3335c3b83c66c6428
       </a >
     </div >
   <div class="card__details">
